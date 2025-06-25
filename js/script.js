@@ -108,3 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 10000); // 10 segundos
   });
 });
+
+// SLIDE AUTOMÁTICO NO CARD PORTFÓLIO
+const slides = document.querySelectorAll('.card-slide .slide');
+let slideAtual = 0;
+
+setInterval(() => {
+  slides[slideAtual].classList.remove('ativo');
+  slideAtual = (slideAtual + 1) % slides.length;
+  slides[slideAtual].classList.add('ativo');
+}, 3000);  // Troca a cada 3 segundos
